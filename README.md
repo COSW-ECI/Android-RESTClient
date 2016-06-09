@@ -10,11 +10,11 @@ Escuela Colombiana de Ingeniería
 En este ejercicio va a implementar un cliente REST para el API disponible en
 <https://products-catalog-api.herokuapp.com/products>, el cual soporta los
 métodos GET (consultar TODOS los productos) y POST (registrar un nuevo
-producto). Tenga en cuenta que este API tiene la protección contra
+producto). Tenga en cuenta que este API tiene, por ahora, la protección contra
 [CSRF](<https://es.wikipedia.org/wiki/Cross-site_request_forgery>) deshabilitada
 (para permitir peticiones desde clientes externos). Si va a implementar un
-cliente Android en su propio API, no olvide deshabilitarlo también en la
-configuración de seguridad de SpringBoot:
+cliente Android en su propio API, no olvide incorporar un manejo de tokens CSRF o deshabilitarlo también en la
+configuración de seguridad de SpringBoot (esto último, si el API sólo será usado por la aplicación móvil):
 
 ```java
 protected void configure(HttpSecurity http) throws Exception {
